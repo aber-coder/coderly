@@ -6,9 +6,13 @@
 
 typedef char *string;
 
-const char *keywords[] = {"int", "float", "if", "else", "while", "return", "void", "for"};
-const char *delimiters = " ;,(){}[]\n\t+-*/=<>!&|";
-const char *operators = "+-*/=<>!&|";
+const string keywords[] = {
+    "int", "float", "if", "else", "while", "return", "void", "for",
+    "char", "double", "long", "short", "signed", "struct",
+     "goto", "continue", "break", "switch", "case",
+    "default", "sizeof", "typedef", "const"};
+const string delimiters = " ;,(){}[]\n\t+-*/=<>!&|";
+const string operators = "+-*/=<>!&|";
 
 bool isDelimiterOrOperator(const char ch)
 {
