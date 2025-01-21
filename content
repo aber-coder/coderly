@@ -2,8 +2,20 @@ content
 wall.jpeg
 
 cd:
-lex_and_yacc.pdf
+lexp
+lexp.l
+lex.yy.c
+manual.pdf
+p1
 p1.c
+p3
+p3.c
+run_lex_gcc.sh
+var.c
 
 cns:
+gnu-c-language-manual
 p2.c
+
+mern:
+e1
