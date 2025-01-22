@@ -1,0 +1,57 @@
+<!-- 1f.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IEKart</title>
+  </head>
+  <body>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+    <form action="success.html" method="get">
+      <label>Username: <input type="text" /></label>
+      <label>Email: <input type="email" /></label>
+      <label>Password: <input type="password" /></label>
+      <label>
+        Gender:
+        <input type="radio" />Male <input type="radio" />Female
+      </label>
+      <label>DOB: <input type="date" /></label>
+      <label>
+        Phone number: <input type="tel" pattern="[\+0-9]{1,12}" />
+      </label>
+      <label>
+        Country:
+        <select>
+          <option selected>India</option>
+          <option>China</option>
+        </select>
+      </label>
+      Languages known:
+      <label>
+        <input type="checkbox" />
+        Hindi
+      </label>
+      <label>
+        <input type="checkbox" />
+        English
+      </label>
+      <label>
+        <input type="checkbox" />
+        Chinese
+      </label>
+      <label>
+        Profile pic:
+        <input type="file" />
+      </label>
+      <label>Tell me about yourself:
+        <br>
+        <textarea></textarea>
+      </label>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </body>
+</html>
