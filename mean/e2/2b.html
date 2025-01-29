@@ -1,52 +1,77 @@
-
-<!doctypehtml>
+<!DOCTYPE html>
 <html>
-<head>
-<title>iekartsignup</title>
-</head>
-<body>
-<h1>iekartsignup</h1>
-<formaction="process-signup.php"method="post">
-<labelfor="username">username:</label>
-<inputtype="text"id="username"name="username"required>
-<br>
+  <head>
+    <title>Iekart Signup</title>
+  </head>
+  <body>
+    <h1>Iekart Signup</h1>
+    <form action="process-signup" method="post">
+      <label
+        >Username:
+        <input type="text" name="username" required />
+      </label>
+      <br />
 
-<labelfor="email">email:</label>
-<inputtype="email"id="email"name="email"required>
-<br>
-<labelfor="password">password:</label>
-<inputtype="password"id="password"name="password"required><br>required>
-<labelfor="confirm-password">confirmpassword:</label>
-<inputtype="password"id="confirm-password"name="confirm-password"
-<br>
-<label for="dob">dateofbirth:</label>
-<inputtype="date"id="dob"name="dob"required>
-<br>
-<labelfor="gender">gender:</label>
-<selectid="gender"name="gender"required>
-<optionvalue="">selectgender</option>
-<optionvalue="male">male</option>
-<optionvalue="female">female</option>
-<optionvalue="other">other</option>
-</select>
-<br>
-<labelfor="favorite-color">favoritecolor:</label>
+      <label
+        >Email:
+        <input type="email" name="email" required />
+      </label>
+      <br />
 
-<inputtype="color"id="favorite-color"name="favorite-color">
-<br>
+      <label
+        >Password:
+        <input type="password" name="password" required />
+      </label>
+      <br />
 
-<labelfor="interests">interests:</label>
-<inputtype="text"id="interests"name="interests">
-<br>
+      <label
+        >Confirm Password:
+        <input type="password" name="confirm-password" required />
+      </label>
+      <br />
 
-<labelfor="newsletter">subscribeto newsletter:</label>
-<inputtype="checkbox"id="newsletter"name="newsletter"value="yes"><br>
+      <label
+        >Date of Birth:
+        <input type="date" name="dob" required />
+      </label>
+      <br />
 
-<labelfor="agreement">agreetotermsandconditions:</label>
-<inputtype="checkbox"id="agreement"name="agreement"required><br>
- 
-<inputtype="submit"value="signup">
-</form>
-</body>
+      <label
+        >Gender:
+        <select name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <br />
+
+      <label
+        >Favorite Color:
+        <input type="color" name="favorite-color" />
+      </label>
+      <br />
+
+      <label
+        >Interests:
+        <input type="text" name="interests" />
+      </label>
+      <br />
+
+      <label
+        >Subscribe to Newsletter:
+        <input type="checkbox" name="newsletter" value="yes" />
+      </label>
+      <br />
+
+      <label
+        >Agree to Terms and Conditions:
+        <input type="checkbox" name="agreement" required />
+      </label>
+      <br />
+
+      <input type="submit" value="Signup" />
+    </form>
+  </body>
 </html>
- 
