@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iekart signup</title>
+</head>
+<body>
+    <h1>iekart signup</h1>
+    <form action="process-signup.php" method="post">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username" required min length="6" max length="20" pattern="[a-za-z0-9]+">
+        <small>must be between 6 and 20 characters and contain only letters and numbers.</small>
+        <br>
+
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email" required>
+        <small>enter a valid email address.</small>
+        <br>
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" required min length="8">
+        <small>must be at least 8 characters long.</small>
+        <br>
+
+        <label for="confirm-password">confirm password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required min length="8">
+        <small>must be at least 8 characters long.</small>
+        <br>
+
+        <label for="dob">date of birth:</label>
+        <input type="date" id="dob" name="dob" required max="2005-01-01">
+        <small>you must be at least 18 years old to signup.</small>
+        <br>
+
+        <label for="gender">gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">select gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br>
+
+        <label for="favorite-color">favorite color:</label>
+        <input type="color" id="favorite-color" name="favorite-color">
+        <small>choose your favorite color.</small>
+        <br>
+
+        <label for="interests">interests:</label>
+        <input type="text" id="interests" name="interests">
+        <small>enter your interests, separated by commas.</small>
+        <br>
+
+        <label for="newsletter">subscribe to newsletter:</label>
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+        <small>check this box to subscribe to our newsletter.</small>
+        <br>
+
+        <label for="agreement">agree to terms and conditions:</label>
+        <input type="checkbox" id="agreement" name="agreement" required>
+        <small>you must agree to our terms and conditions.</small>
+        <br>
+
+        <input type="submit" value="signup">
+    </form>
+</body>
+</html>
