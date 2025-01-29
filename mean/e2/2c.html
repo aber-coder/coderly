@@ -5,59 +5,69 @@
 </head>
 <body>
     <h1>iekart signup</h1>
-    <form action="process-signup.php" method="post">
-        <label for="username">username:</label>
-        <input type="text" id="username" name="username" required min length="6" max length="20" pattern="[a-za-z0-9]+">
-        <small>must be between 6 and 20 characters and contain only letters and numbers.</small>
+    <form action="process-signup" method="post">
+        <label>username:
+            <input type="text" name="username" required minlength="6" maxlength="20" pattern="[a-zA-Z0-9]+">
+        </label>
+        <p>must be between 6 and 20 characters and contain only letters and numbers.</p>
         <br>
 
-        <label for="email">email:</label>
-        <input type="email" id="email" name="email" required>
-        <small>enter a valid email address.</small>
+        <label>email:
+            <input type="email" name="email" required>
+        </label>
+        <p>enter a valid email address.</p>
         <br>
 
-        <label for="password">password:</label>
-        <input type="password" id="password" name="password" required min length="8">
-        <small>must be at least 8 characters long.</small>
+        <label>password:
+            <input type="password" name="password" required minlength="8">
+        </label>
+        <p>must be at least 8 characters long.</p>
         <br>
 
-        <label for="confirm-password">confirm password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required min length="8">
-        <small>must be at least 8 characters long.</small>
+        <label>confirm password:
+            <input type="password" name="confirm-password" required minlength="8">
+        </label>
+        <p>must be at least 8 characters long.</p>
         <br>
 
-        <label for="dob">date of birth:</label>
-        <input type="date" id="dob" name="dob" required max="2005-01-01">
-        <small>you must be at least 18 years old to signup.</small>
+        <label>date of birth:
+            <input type="date" name="dob" required max="2005-01-01">
+        </label>
+        <p>you must be at least 18 years old to signup.</p>
         <br>
 
-        <label for="gender">gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="">select gender</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="other">other</option>
-        </select>
+        <label>gender:
+            <select name="gender" required>
+                <option value="">select gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </select>
+        </label>
         <br>
 
-        <label for="favorite-color">favorite color:</label>
-        <input type="color" id="favorite-color" name="favorite-color">
-        <small>choose your favorite color.</small>
+        <label>favorite color:
+            <input type="color" name="favorite-color">
+        </label>
+        <p>choose your favorite color.</p>
         <br>
 
-        <label for="interests">interests:</label>
-        <input type="text" id="interests" name="interests">
-        <small>enter your interests, separated by commas.</small>
+        <label>interests:
+            <input type="text" name="interests">
+        </label>
+        <p>enter your interests, separated by commas.</p>
         <br>
 
-        <label for="newsletter">subscribe to newsletter:</label>
-        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-        <small>check this box to subscribe to our newsletter.</small>
+        <label>subscribe to newsletter:
+            <input type="checkbox" name="newsletter" value="yes">
+        </label>
+        <p>check this box to subscribe to our newsletter.</p>
         <br>
 
-        <label for="agreement">agree to terms and conditions:</label>
-        <input type="checkbox" id="agreement" name="agreement" required>
-        <small>you must agree to our terms and conditions.</small>
+        <label>agree to terms and conditions:
+            <input type="checkbox" name="agreement" required>
+        </label>
+        <p>you must agree to our terms and conditions.</p>
         <br>
 
         <input type="submit" value="signup">
