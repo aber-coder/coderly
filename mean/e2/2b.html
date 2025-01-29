@@ -6,32 +6,38 @@
   <body>
     <h1>Iekart Signup</h1>
     <form action="process-signup" method="post">
-      <label>Username:
+      <label
+        >Username:
         <input type="text" name="username" required />
       </label>
       <br />
 
-      <label>Email:
+      <label
+        >Email:
         <input type="email" name="email" required />
       </label>
       <br />
 
-      <label>Password:
+      <label
+        >Password:
         <input type="password" name="password" required />
       </label>
       <br />
 
-      <label>Confirm Password:
+      <label
+        >Confirm Password:
         <input type="password" name="confirm-password" required />
       </label>
       <br />
 
-      <label>Date of Birth:
+      <label
+        >Date of Birth:
         <input type="date" name="dob" required />
       </label>
       <br />
 
-      <label>Gender:
+      <label
+        >Gender:
         <select name="gender" required>
           <option value="">Select Gender</option>
           <option value="male">Male</option>
@@ -41,22 +47,30 @@
       </label>
       <br />
 
-      <label>Favorite Color:
+      <label
+        >Favorite Color:
         <input type="color" name="favorite-color" />
       </label>
       <br />
 
-      <label>Interests:
-        <input type="text" name="interests" />
+      <label
+        >Interests:
+        <input list="interests-list" type="text" name="interests" />
+        <datalist id="interests-list">
+          <option value="Tech"></option>
+          <option value="Fashion"></option>
+        </datalist>
       </label>
       <br />
 
-      <label>Subscribe to Newsletter:
+      <label
+        >Subscribe to Newsletter:
         <input type="checkbox" name="newsletter" value="yes" />
       </label>
       <br />
 
-      <label>Agree to Terms and Conditions:
+      <label
+        >Agree to Terms and Conditions:
         <input type="checkbox" name="agreement" required />
       </label>
       <br />
