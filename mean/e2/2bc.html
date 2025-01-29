@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iekart signup</title>
+  </head>
+  <body>
+    <style>
+      label {
+        display: block;
+      }
+    </style>
+    <h1>iekart signup</h1>
+    <form>
+      <label>username:
+        <input
+          type="text"
+          name="username"
+          required
+          minlength="6"
+          maxlength="20"
+          pattern="[a-zA-Z0-9]+"
+          placeholder="6 to 20 alphanumeric characters"
+        />
+      </label>
+
+      <label>email:
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="enter a valid email address."
+        />
+      </label>
+
+      <label>password:
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="must be at least 8 characters long."
+          minlength="8"
+        />
+      </label>
+
+      <label>confirm password:
+        <input
+          type="password"
+          name="confirm-password"
+          required
+          minlength="8"
+          placeholder="must be at least 8 characters long."
+        />
+      </label>
+
+      <label>date of birth:
+        <input type="date" name="dob" required min="2005-01-01" />
+      </label>
+      <p>you must be at least 18 years old to signup.</p>
+
+      <label>gender:
+        <select name="gender" required>
+          <option value="">select gender</option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="other">other</option>
+        </select>
+      </label>
+
+      <label>favorite color:
+        <input type="color" name="favorite-color" />
+      </label>
+      <p>choose your favorite color.</p>
+
+      <label>Interests:
+        <input
+          list="interests-list"
+          type="text"
+          name="interests"
+          placeholder="Fashion, technology..."
+        />
+        <datalist id="interests-list">
+          <option value="Tech"></option>
+          <option value="Fashion"></option>
+        </datalist>
+      </label>
+      <input type="submit" value="signup" />
+    </form>
+  </body>
+</html>
