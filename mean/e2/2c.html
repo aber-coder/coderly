@@ -5,8 +5,9 @@
   </head>
   <body>
     <h1>iekart signup</h1>
-    <form action="process-signup" method="post">
-      <label>username:
+    <form>
+      <label
+        >username:
         <input
           type="text"
           name="username"
@@ -14,39 +15,39 @@
           minlength="6"
           maxlength="20"
           pattern="[a-zA-Z0-9]+"
-        >
+        />
       </label>
       <p>
         must be between 6 and 20 characters and contain only letters and
         numbers.
       </p>
-      <br>
 
-      <label>email:
-        <input type="email" name="email" required>
+      <label
+        >email:
+        <input type="email" name="email" required />
       </label>
       <p>enter a valid email address.</p>
-      <br>
 
-      <label>password:
-        <input type="password" name="password" required minlength="8">
+      <label
+        >password:
+        <input type="password" name="password" required minlength="8" />
       </label>
       <p>must be at least 8 characters long.</p>
-      <br>
 
-      <label>confirm password:
-        <input type="password" name="confirm-password" required minlength="8">
+      <label
+        >confirm password:
+        <input type="password" name="confirm-password" required minlength="8" />
       </label>
       <p>must be at least 8 characters long.</p>
-      <br>
 
-      <label>date of birth:
-        <input type="date" name="dob" required max="2005-01-01">
+      <label
+        >date of birth:
+        <input type="date" name="dob" required min="2005-01-01" />
       </label>
       <p>you must be at least 18 years old to signup.</p>
-      <br>
 
-      <label>gender:
+      <label
+        >gender:
         <select name="gender" required>
           <option value="">select gender</option>
           <option value="male">male</option>
@@ -54,33 +55,18 @@
           <option value="other">other</option>
         </select>
       </label>
-      <br>
 
-      <label>favorite color:
-        <input type="color" name="favorite-color">
+      <label
+        >favorite color:
+        <input type="color" name="favorite-color" />
       </label>
       <p>choose your favorite color.</p>
-      <br>
 
-      <label>interests:
-        <input type="text" name="interests">
+      <label
+        >interests:
+        <input type="text" name="interests" />
       </label>
-      <p>enter your interests, separated by commas.</p>
-      <br>
-
-      <label>subscribe to newsletter:
-        <input type="checkbox" name="newsletter" value="yes">
-      </label>
-      <p>check this box to subscribe to our newsletter.</p>
-      <br>
-
-      <label>agree to terms and conditions:
-        <input type="checkbox" name="agreement" required>
-      </label>
-      <p>you must agree to our terms and conditions.</p>
-      <br>
-
-      <input type="submit" value="signup">
+      <input type="submit" value="signup" />
     </form>
   </body>
 </html>
