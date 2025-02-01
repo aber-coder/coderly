@@ -9,7 +9,7 @@ class Substituition{
             letter_map.put((char) i, (char) (122-i+97));
         }
         StringBuilder res = new StringBuilder();
-        txt.chars().forEach(c->res.append(letter_map.getOrDefault((char)c, c)));
+        txt.chars().forEach(c->res.append(letter_map.getOrDefault((char)c,(char) c)));
         return res.toString();
     }
    
