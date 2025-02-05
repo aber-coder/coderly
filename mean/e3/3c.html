@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <script>
+      const ticketPrice = 150;
+      const numTickets = 15;
+      const festiveDiscountRate = 0.1;
+      const totalPrice = ticketPrice * numTickets;
+      const discountAmount = Math.ceil(totalPrice * festiveDiscountRate);
+      const finalPrice = totalPrice - discountAmount;
+      console.log(`
+      Tickets: ${numTickets}
+      Ticket price: ${ticketPrice}
+      Festive Discount: ${festiveDiscountRate * 100}%
+     
+      Total Price:     ${totalPrice}
+    - Discount Amount:  ${discountAmount}
+     ______________________
+      Final price:     ${finalPrice}
+      `);
+    </script>
+  </body>
+</html>
