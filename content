@@ -53,6 +53,8 @@ utils
 
 ml:
 exp12.ipynb
+exp13.ipynb
+exp15.ipynb
 exp2.ipynb
 exp3.ipynb
 exp4c.ipynb
@@ -62,6 +64,8 @@ exp6.ipynb
 exp9.ipynb
 knn.ipynb
 knn_visualization.ipynb
+pyproject.toml
 sport.csv
 temp.ipynb
+uv.lock
 weather.csv
