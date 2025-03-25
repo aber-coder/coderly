@@ -2,49 +2,91 @@
 { config, pkgs, ... }:
 
 {
-  # Basic Home Manager setup
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "24.05";
 
-#Configure the fish shell and integrate zoxide
+
   programs.fish = {
     enable = true;
     shellInit = ''
-      # Initialize zoxide for fish shell integration.
-      eval (zoxide init fish)
+      set -x WAYLAND_DISPLAY wayland-0
+      set -x XDG_RUNTIME_DIR /mnt/wslg/runtime-dir
+
+        if test -e /mnt/wslg/runtime-dir/wayland-0 -a ! -e /run/user/1000/wayland-0
+          ln -s /mnt/wslg/runtime-dir/wayland-0 /run/user/1000/wayland-0
+        end
+        if test -d /run/user/1000
+          # Ensure the directory is owned by the user "nixos"
+          chown nixos:nixos /run/user/1000 2>/dev/null; or true
+          chmod 0700 /run/user/1000
+      end
+        eval (fzf init fish)
+        eval (zoxide init --cmd cd fish)
+
     '';
+    shellAliases = {
+      efish = "nvim ~/.config/fish/config.fish";
+      sfish = "source ~/.config/fish/config.fish";
+      rm = "trash";
+      pc = "sudo pacman";
+      zj = "zellij";
+      gs = "git status";
+      ga = "git add -A";
+      gcom = "git commit -m";
+      ehome = "nvim ~/.config/home-manager/home.nix";
+      build_switch = "home-manager build && home-manager switch";
+    };
+    functions.lazyg = {
+      body = ''
+        git add -A && git commit -m $argv && git push
+      '';
+    };
+    plugins = [
+      # { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+      # { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      # { name = "tide"; src = pkgs.fetchFromGitHub {
+      #   owner = "IlanCosman";
+      #   repo = "tide";
+      #   rev = "v5.0.1";
+      #   sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
+      # }; }
+    ];
   };
 
-  # Install the desired packages.
+  programs.home-manager.enable = true;
+
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      ms-python.python
+    ];
+  };
+
   home.packages = with pkgs; [
-    fd            # Fast alternative to 'find'
-    ripgrep       # Fast text search tool
-    neovim        # Modern Vim-based text editor
-    zellij        # Terminal workspace manager
-    python312     # Python 3.12 interpreter
-    git           # Version control system
-    gh            # GitHub CLI
-    openjdk23     # OpenJDK 23 (verify attribute if needed)
-    clang         # C language compiler frontend
-    zoxide        # Enhanced directory navigation
-    fzf           # Fuzzy finder
-    bat           # 'cat' clone with syntax highlighting
-    nodejs        # Node.js runtime
-    deno          # Secure runtime for JS/TS
-    bun           # Bun JavaScript runtime (if available)
-    micro         # Terminal-based text editor
-    python3
-    python3Packages.numpy
-    python3Packages.matplotlib
-    python3Packages.seaborn
-    python3Packages.pandas
-    python3Packages.scikit-learn
-    python3Packages.mlxtend
-    python3Packages.jupyter
-    python3Packages.ipykernel
+    bat
+    bun
+    clang
+    deno
+    fd
+    fzf
+    gh
+    git
+    micro
+    neovim
+    nodejs
+    openjdk23
+    python312
+    ripgrep
+    rustup
+    trash-cli
+    weston
+    wl-clipboard
+    wget
+    zellij
+    zoxide
   ];
 
-  # Allow Home Manager to manage itself.
-  programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
 }
